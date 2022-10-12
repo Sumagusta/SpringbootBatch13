@@ -12,10 +12,10 @@ import lombok.Data;
 public class Mahasiswa {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) // Auto increment
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto increment
 	private int id;
 	private String name;	
-	private String age;
+	private int age;
 	private int semester; // property
 	
 }

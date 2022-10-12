@@ -16,6 +16,7 @@ public class MahasiswaService implements IMahasiswaService {
 	@Override
 	public Mahasiswa insert(Mahasiswa mahasiswa) {
 		// TODO Auto-generated method stub
+		
 		return mahasiswaRepository.insert(mahasiswa);
 	}
 
