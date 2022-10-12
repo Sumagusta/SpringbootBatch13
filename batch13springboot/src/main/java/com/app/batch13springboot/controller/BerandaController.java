@@ -1,12 +1,18 @@
 package com.app.batch13springboot.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.batch13springboot.service.IMahasiswaService;
+
 @RestController 
 @RequestMapping("/api")
 public class BerandaController {
+	
+	@Autowired
+	IMahasiswaService mahasiswaService;
 	
 	@RequestMapping("/header")
 	public String home() {
@@ -18,7 +24,7 @@ public class BerandaController {
 	@PostMapping("/post")
 	public String post() {
 		
-	
+		
 		
 		return null;
 	}
