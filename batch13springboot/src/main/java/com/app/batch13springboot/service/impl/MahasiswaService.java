@@ -1,5 +1,7 @@
 package com.app.batch13springboot.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,21 @@ public class MahasiswaService implements IMahasiswaService {
 		// TODO Auto-generated method stub
 		
 		return mahasiswaRepository.insert(mahasiswa);
+	}
+
+	@Override
+	public String insertCount(Mahasiswa mahasiswa) {
+		// TODO Auto-generated method stub
+		
+		int result = mahasiswaRepository.insertCount(mahasiswa);
+		return "Insert berhasil, sebanyak : "+result;
+	}
+
+	@Override
+	public List<Mahasiswa> findAll() {
+		// TODO Auto-generated method stub
+		var result = mahasiswaRepository.findAll();
+		return result;
 	}
 
 	
