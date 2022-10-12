@@ -22,6 +22,7 @@ public class BerandaController {
 	}
 	
 	// API Req : Post, Put, Get, Delete
+	// REST API
 	
 	@PostMapping("/post")
 	public Mahasiswa post(@RequestBody Mahasiswa mahasiswa) {
