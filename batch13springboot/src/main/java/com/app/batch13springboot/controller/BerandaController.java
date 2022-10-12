@@ -13,7 +13,7 @@ import com.app.batch13springboot.service.IMahasiswaService;
 @RequestMapping("/api")
 public class BerandaController {
 	
-	@Autowired
+	@Autowired // DI
 	IMahasiswaService mahasiswaService;
 	
 	@RequestMapping("/header")

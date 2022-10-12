@@ -12,7 +12,7 @@ import lombok.Data;
 public class Mahasiswa {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO) // Auto increment
 	private int id;
 	private String name;	
 	private String age;
