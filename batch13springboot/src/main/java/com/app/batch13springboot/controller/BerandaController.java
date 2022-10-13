@@ -40,8 +40,7 @@ public class BerandaController {
 	
 	@PostMapping("/post/returncount")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public String postCount(@RequestBody Mahasiswa mahasiswa) {
-		
+	public String postCount(@RequestBody Mahasiswa mahasiswa) {		
 		return mahasiswaService.insertCount(mahasiswa);
 	}
 	
@@ -61,8 +60,9 @@ public class BerandaController {
 	public ResponseEntity<String> deleteMahasiswa(@PathVariable int id){
 				
 		mahasiswaService.deleteById(id);
-		return ResponseEntity.status(HttpStatus.GONE).body("Data Sudah terhapus");
-				
+		return ResponseEntity.status(HttpStatus.GONE).body("Data Sudah terhapus");		
 		
 	}
+	
+	// update
 }
