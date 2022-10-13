@@ -49,4 +49,22 @@ public class MahasiswaRepository implements IMahasiswaRepository {
 		return result;
 	}
 
+	@Override
+	public Mahasiswa findById(int id) {
+		// TODO Auto-generated method stub
+		
+		String query = "select * from mahasiswa m where m.id=?";
+		var result = jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(Mahasiswa.class), id);
+		return result;
+	}
+
+	@Override
+	public void deleteById(int id) {
+		// TODO Auto-generated method stub
+		
+		String query = "delete from mahasiswa m where m.id = ?";
+		jdbcTemplate.update(query, id);
+		
+	}
+
 }

@@ -9,6 +9,8 @@ public interface IMahasiswaRepository {
 	public Mahasiswa insert(Mahasiswa mahasiswa);
 	public int insertCount(Mahasiswa mahasiswa);
 	public List<Mahasiswa> findAll();
+	public Mahasiswa findById(int id);
+	public void deleteById(int id);
 	
 	// id : 1
 	// name : yoo ..

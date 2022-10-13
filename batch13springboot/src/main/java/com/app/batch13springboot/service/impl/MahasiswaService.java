@@ -37,6 +37,19 @@ public class MahasiswaService implements IMahasiswaService {
 		return result;
 	}
 
+	@Override
+	public Mahasiswa findById(int id) {
+		// TODO Auto-generated method stub
+		
+		var result = mahasiswaRepository.findById(id);
+		return result;
+	}
+
+	@Override
+	public void deleteById(int id) {
+		mahasiswaRepository.deleteById(id);
+	}
+
 	
 	
 }

@@ -8,4 +8,6 @@ public interface IMahasiswaService {
 	public Mahasiswa insert(Mahasiswa mahasiswa);
 	public String insertCount(Mahasiswa mahasiswa);
 	public List<Mahasiswa> findAll();
+	public Mahasiswa findById(int id);
+	public void deleteById(int id);
 }
