@@ -26,4 +26,9 @@ public class HomeController {
 		return "/bootstrapHome";
 	}
 	
+	@RequestMapping("/jsobject")
+	public String jsObject() {
+		return "/jsObject";
+	}
+	
 }

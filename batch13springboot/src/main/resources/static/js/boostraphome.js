@@ -78,4 +78,3 @@ var data1 = 20;
 		return store;
 	}
 	
-	
