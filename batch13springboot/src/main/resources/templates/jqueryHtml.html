@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JQuery</title>
+<script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+	<h2 id="a">JQUERY MATERIAL</h2>
+	<h2 id="b">KODEHIVE</h2>
+	
+	<p id="paraf" title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+			ac fringilla eros. Phasellus vitae convallis nisl</p>
+			
+	<p id="replace"></p>
+	<img id="img1" alt="" src="static/image/photo1.jpeg" style="width: 500px; height: 300px">
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function() {
+		get = document.getElementById("a")
+		get.style.color = "red"
+		
+		getTitle();		
+		attrReplace();
+	})
+	
+	function getTitle(){
+		dataTitle = $("#paraf").attr("title")
+		$("#replace").text(dataTitle);
+	}
+	
+	function attrReplace(){
+		$("#img1").attr("alt", "Gambar Belajar") // nameAttr, valueAttr
+	}
+</script>
+</html>

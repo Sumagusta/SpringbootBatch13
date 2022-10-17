@@ -31,4 +31,9 @@ public class HomeController {
 		return "/jsObject";
 	}
 	
+	@RequestMapping("/jqueryhtml")
+	public String jqueryHtml() {
+		return "/jqueryHtml";
+	}
+	
 }
