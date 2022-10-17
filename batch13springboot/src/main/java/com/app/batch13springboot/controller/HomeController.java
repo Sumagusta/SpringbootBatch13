@@ -10,5 +10,20 @@ public class HomeController {
 	public String home() {
 		return "/home";
 	}
+
+	@RequestMapping("/register")
+	public String register() {
+		return "/forms";
+	}
+
+	@RequestMapping("/htmlcss")
+	public String htmlCSS() {
+		return "/htmlCss";
+	}
+
+	@RequestMapping("/boot")
+	public String htmlBoot() {
+		return "/bootstrapHome";
+	}
 	
 }

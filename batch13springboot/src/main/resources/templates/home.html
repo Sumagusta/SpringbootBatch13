@@ -3,10 +3,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Kodehive - Batch 13</title>
+
+<style type="text/css">
+div.fixed {
+  position: fixed;
+  width: 50%;
+  bottom: 10px;
+  border: 3px solid #8AC007;
+} 
+</style>
+
 </head>
 <body>
 
-	<h1>Java Fullstack 13</h1>
+<script type="text/javascript">
+document.scrollingElement.scroll(0, 1);
+</script>
+
+<div id="scroller">
+  <!-- new content dynamically inserted here -->
+  <h1>Java Fullstack 13</h1>
 
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac
 	fringilla eros. Phasellus vitae convallis nisl. Pellentesque at
@@ -66,6 +82,7 @@
 	
 	
 	
+	
 	</pre>
 
 	<hr>
@@ -109,7 +126,7 @@
 		<tbody>
 			<tr>
 				<!-- Baris -->
-				<td>1</td>
+				<td rowspan="2">1</td>
 				<!-- Kolom -->
 				<td>Rizal</td>
 				<!-- Kolom -->
@@ -117,8 +134,7 @@
 				<!-- Kolom -->
 			</tr>
 			<tr>
-				<!-- Baris -->
-				<td>2</td>
+
 				<!-- Kolom -->
 				<td>Hendra</td>
 				<!-- Kolom -->
@@ -129,13 +145,26 @@
 
 		<tfoot>
 			<tr>
-				<td>FOOTER</td>
+				<td colspan="3">FOOTER</td>
 			</tr>
 		</tfoot>
-
 	</table>
 
+	<div>
+		<ul>
+			<li>List 1</li>
+			<li>List 2</li>
+			<li>List 3</li>
+		</ul>
 
+		<ol>
+			<li>List 1</li>
+			<li>List 2</li>
+			<li>List 3</li>
+		</ol>
+	</div>
+  <div id="anchor"></div>
+</div>
 
 </body>
 </html>
