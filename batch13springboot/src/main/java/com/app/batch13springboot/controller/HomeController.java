@@ -36,4 +36,9 @@ public class HomeController {
 		return "/jqueryHtml";
 	}
 	
+	@RequestMapping("/modal")
+	public String getModal() {
+		return "/formModal";
+	}
+	
 }
