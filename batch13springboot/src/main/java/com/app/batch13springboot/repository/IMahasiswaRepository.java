@@ -12,6 +12,8 @@ public interface IMahasiswaRepository {
 	public Mahasiswa findById(int id);
 	public void deleteById(int id);
 	
+	public Mahasiswa update(Mahasiswa mahasiswa); 
+	
 	// id : 1
 	// name : yoo ..
 	

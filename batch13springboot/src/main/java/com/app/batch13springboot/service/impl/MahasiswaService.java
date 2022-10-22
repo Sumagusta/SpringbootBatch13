@@ -50,6 +50,12 @@ public class MahasiswaService implements IMahasiswaService {
 		mahasiswaRepository.deleteById(id);
 	}
 
+	@Override
+	public Mahasiswa update(Mahasiswa mahasiswa) {
+		
+		return mahasiswaRepository.update(mahasiswa);
+	}
+
 	
 	
 }

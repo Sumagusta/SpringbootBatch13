@@ -1,0 +1,23 @@
+<form id="form-edit-mahasiswa">
+	
+	<div class="form-group" hidden="">
+		<label class="col-form-label">Id</label> <input
+			type="text" class="form-control" name="id" th:value="${bingkisanEdit.id}" />
+	</div>
+	<div class="form-group">
+		<label class="col-form-label">Name</label> <input
+			type="text" class="form-control" name="name" th:value="${bingkisanEdit.name}" />
+	</div>
+	<div class="form-group">
+		<label class="col-form-label">Age</label> <input
+			type="text" class="form-control" name="age" th:value="${bingkisanEdit.age}"/>
+	</div>
+	<div class="form-group">
+		<label class="col-form-label">Semester</label> <input
+			type="text" class="form-control" name="semester" th:value="${bingkisanEdit.semester}" />
+	</div>
+	<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+</form>

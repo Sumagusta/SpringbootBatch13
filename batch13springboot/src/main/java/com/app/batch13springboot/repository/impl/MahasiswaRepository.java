@@ -67,4 +67,13 @@ public class MahasiswaRepository implements IMahasiswaRepository {
 		
 	}
 
+	@Override
+	public Mahasiswa update(Mahasiswa mahasiswa) {
+		// TODO Auto-generated method stub
+		
+		String query = "update mahasiswa m set m.name=?, m.age=?, m.semester=? where m.id=?";
+		jdbcTemplate.update(query, new Object[] {mahasiswa.getName(), mahasiswa.getAge(), mahasiswa.getSemester(), mahasiswa.getId()});
+		return mahasiswa;
+	}
+
 }

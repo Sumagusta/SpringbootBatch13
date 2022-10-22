@@ -4,8 +4,8 @@
 	<td th:text="${item.semester}"></td>
 	
 	<td>
-		<button class="btn btn-danger"><i class="fa-solid fa-trash" aria-hidden="true"></i></button>
-		<button></button>
+		<button th:value="${item.id}" id="btn-edit" class="btn btn-info">Edit</button>
+		<button th:value="${item.id}" id="btn-delete" class="btn btn-danger">Delete</button>
 	</td>
 	
 </tr>

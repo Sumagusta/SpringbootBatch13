@@ -24,7 +24,7 @@
 		</div>
 		<div class="row">
 			<div class="form-group">
-				<button class="btn btn-primary">Tambah Mahasiswa</button>
+				<button id="btn-add" class="btn btn-primary">Tambah Mahasiswa</button>
 			</div>
 			<div class="form-group">
 				<table class="table table-striped">
@@ -42,6 +42,22 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="modal fade" id="modal-data" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="title-function">Pop-Up</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				<!-- random function -->
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -56,9 +72,102 @@
 				success : function(result) {
 					$("#list-mahasiswa").html(result)
 				}
-			})
-
+			});
 		}
+		
+		$("#btn-add").click(function(){
+			$.ajax({
+				url : "/mahasiswa/add",
+				type : "get",
+				dataType : "html",
+				success : function(result){
+					$("#title-function").text("Pop Up Tambah Mahasiswa")
+					$("#modal-data").modal('show')
+					$("#modal-data").find(".modal-body").html(result)
+				}
+			})
+		})
+		
+		/* Pop Up */
+		$("#list-mahasiswa").on('click', '#btn-edit', function(){
+			id = $(this).val()
+			$.ajax({
+				url : "/mahasiswa/edit",
+				type : "get",
+				dataType : "html",
+				data : {id},
+				success : function(result){
+					$("#title-function").text("Pop Up Edit Mahasiswa")
+					$("#modal-data").modal('show')
+					$("#modal-data").find(".modal-body").html(result)
+				}
+			})
+		})
+		
+		/* Ajax Create */
+		$("#modal-data").on('submit', '#form-add-mahasiswa', function(){
+			$.ajax({
+				url : "/mahasiswa/create",
+				type : "post",
+				data : $(this).serialize(),
+				success : function(result){
+					alert("add data berhasil")
+					$("#modal-data").modal('hide')
+					refresh()
+				}
+			})
+			return false;
+		})
+
+		/* Ajax Edit */
+		$("#modal-data").on('submit', '#form-edit-mahasiswa', function(){
+			$.ajax({
+				url : "/mahasiswa/update",
+				type : "post",
+				data : $(this).serialize(),
+				success : function(result){
+					alert("edit data berhasil")
+					$("#modal-data").modal('hide')
+					refresh()
+				}
+			})
+			return false;
+		})
+		
+		
+		
+		$('#list-mahasiswa').on('click', '#btn-delete', function(){
+			id = $(this).val();
+			$.ajax({
+				url : "/mahasiswa/remove",
+				type : "GET",
+				dataType : "html",
+				data : {id},
+				success : function(result) {
+					
+					$("#title-function").text("Pop Up Delete")
+					$("#modal-data").modal("show")
+					$("#modal-data").find(".modal-body").html(result)
+				}
+			});
+		});
+		
+		$('#modal-data').on('submit', '#form-mahasiswa-delete', function(){
+			id = $('#id').val()
+			$.ajax({
+				url : "/mahasiswa/delete/?id="+id,
+				type : "post",
+				dataType : "html",
+				success : function(result) {
+					alert("data terhapus");
+					$("#modal-data").modal('hide');
+					refresh();
+				}
+			});
+			return false;
+		});
+		
+		
 	</script>
 
 </body>

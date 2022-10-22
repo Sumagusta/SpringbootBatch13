@@ -10,4 +10,5 @@ public interface IMahasiswaService {
 	public List<Mahasiswa> findAll();
 	public Mahasiswa findById(int id);
 	public void deleteById(int id);
+	public Mahasiswa update(Mahasiswa mahasiswa); 
 }
